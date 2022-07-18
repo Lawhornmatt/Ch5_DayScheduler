@@ -1,17 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
+:root {
+  --rustyRidge: .25rem ridge rgb(75, 48, 40);
+  /* --chromeRidge: .25rem ridge rgb(129, 107, 95); */
+  --chromeRidge: .1rem dashed greenyellow;
+  --CRT-screen: repeating-linear-gradient(
+    0deg, 
+    rgb(5, 5, 8),
+    rgb(7, 7, 9) 10px, 
+    rgb(0, 0, 0) 10px);
+}
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
   font-family: 'IBM Plex Mono', monospace;
+  background-color: #000000;
 }
 
 header.jumbotron > * {
   background-image: url('/assets/images/GS_A.jpg');
-  border: .25rem ridge rgb(75, 48, 40);
+  border: var(--rustyRidge);
   padding: .5rem;
 }
 
@@ -35,7 +46,8 @@ textarea{
   background-image: url('/assets/images/CS_C_A.jpg');
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: var(--rustyRidge);
+  margin: 0;
 }
 
 .jumbotron h1 {
@@ -92,6 +104,15 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
+/* I think Bootstrap gives all rows a thin white border automatically. This overrides it.  */
+.row {  
+  border-top: 0 !important;
+  border-left: var(--rustyRidge);
+  border-right: var(--rustyRidge);
+  border-bottom: var(--rustyRidge);
+  color: greenyellow;
+}
+
 .container-fluid div {
   display: flex;
   justify-content: center;
@@ -99,13 +120,15 @@ textarea{
 }
 
 .col-2 {
-  background-color: green;
+  background: var(--CRT-screen);
   min-height: 3rem;
 }
 
 .col-8 {
-  background-color: maroon;
+  background: var(--CRT-screen);
   min-height: 3rem;
+  border-left: var(--chromeRidge);
+  border-right: var(--chromeRidge);
 
 }
 
