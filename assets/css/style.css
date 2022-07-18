@@ -1,7 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+header.jumbotron > * {
+  background-image: url('/assets/images/GS_A.jpg');
+  border: .25rem ridge rgb(75, 48, 40);
+  padding: .5rem;
+}
+
+.stopit {
+  margin: 0;
+  padding: 0;
 }
 
 textarea{
@@ -15,11 +31,17 @@ textarea{
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-color: silver;
+  background-image: url('/assets/images/CS_C_A.jpg');
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
 }
+
+.jumbotron h1 {
+  font-family: 'Roboto Mono', monospace;
+}
+
 
 .description{
   white-space: pre-wrap;
@@ -69,3 +91,21 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+.container-fluid div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-2 {
+  background-color: green;
+  min-height: 3rem;
+}
+
+.col-8 {
+  background-color: maroon;
+  min-height: 3rem;
+
+}
+
