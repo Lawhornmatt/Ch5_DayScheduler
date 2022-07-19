@@ -10,6 +10,18 @@
     rgb(5, 5, 8),
     rgb(7, 7, 9) 10px, 
     rgb(0, 0, 0) 10px);
+
+    --screen-shine: repeating-linear-gradient(
+      45deg, 
+      transparent 0%,
+      rgba(164, 230, 167, 0.02) 50%, 
+      transparent 100%);
+      
+      /* conic-gradient(
+      from 45deg at 90% 10%, 
+      rgba(147, 226, 151, 0.3), 
+      transparent, 
+      rgb(128, 100, 194)); */
 }
 
 body {
@@ -17,7 +29,7 @@ body {
   font-size: 16px;
   line-height: 1;
   font-family: 'IBM Plex Mono', monospace;
-  background-color: #000000;
+  /* background-color: var(--CRT-screen); */
 }
 
 header.jumbotron > * {
@@ -46,12 +58,16 @@ textarea{
   background-image: url('/assets/images/CS_C_A.jpg');
   color: black;
   border-radius: 0;
-  border-bottom: var(--rustyRidge);
+  /* border-bottom: var(--rustyRidge); */
   margin: 0;
 }
 
 .jumbotron h1 {
   font-family: 'Roboto Mono', monospace;
+}
+
+.jumbotron p {
+  font-weight: bold;
 }
 
 
@@ -107,10 +123,17 @@ textarea{
 /* I think Bootstrap gives all rows a thin white border automatically. This overrides it.  */
 .row {  
   border-top: 0 !important;
-  border-left: var(--rustyRidge);
-  border-right: var(--rustyRidge);
-  border-bottom: var(--rustyRidge);
+  border-bottom: var(--chromeRidge);
   color: greenyellow;
+  background: var(--CRT-screen);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.container-fluid {
+  border: var(--rustyRidge);
 }
 
 .container-fluid div {
@@ -120,15 +143,27 @@ textarea{
 }
 
 .col-2 {
-  background: var(--CRT-screen);
+  background: var(--screen-shine);
   min-height: 3rem;
+  font-size: 1.5rem;
 }
 
 .col-8 {
-  background: var(--CRT-screen);
+  background: var(--screen-shine);
   min-height: 3rem;
   border-left: var(--chromeRidge);
   border-right: var(--chromeRidge);
-
 }
+
+/* .material-icons.md-48 { font-size: 654px; } */
+
+.material-symbols-outlined {
+  font-size: 50px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 200,
+  'opsz' 48
+}
+
 
