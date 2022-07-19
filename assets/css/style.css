@@ -57,9 +57,8 @@ textarea{
   background-color: silver;
   background-image: url('/assets/images/CS_C_A.jpg');
   color: black;
-  border-radius: 0;
-  /* border-bottom: var(--rustyRidge); */
   margin: 0;
+
 }
 
 .jumbotron h1 {
@@ -166,4 +165,12 @@ textarea{
   'opsz' 48
 }
 
+.pulse:hover{ 
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { visibility: hidden;}
+}
+  
 
