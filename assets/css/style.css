@@ -32,6 +32,32 @@ body {
   /* background-color: var(--CRT-screen); */
 }
 
+input {
+  background: transparent;
+  border: none;
+  color: greenyellow;
+  width: 100%;
+  height: 100%;
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  color: greenyellow;
+  width: 98%;
+  height: 85%;
+  outline: none;
+  resize: none;
+}
+
+textarea::placeholder {
+  opacity: 1;
+  color: greenyellow;
+  text-justify: center;
+  text-align: center;
+  /* vertical-align: center; Apparently is not supported... alas */
+}
+
 header.jumbotron > * {
   background-image: url('/assets/images/GS_A.jpg');
   border: var(--rustyRidge);
@@ -41,15 +67,6 @@ header.jumbotron > * {
 .stopit {
   margin: 0;
   padding: 0;
-}
-
-textarea{
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
 }
 
 .jumbotron {
@@ -82,7 +99,7 @@ textarea{
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
 }
 
 .hour {
@@ -152,6 +169,7 @@ textarea{
   min-height: 3rem;
   border-left: var(--chromeRidge);
   border-right: var(--chromeRidge);
+  padding: .125rem;
 }
 
 /* .material-icons.md-48 { font-size: 654px; } */
@@ -169,8 +187,13 @@ textarea{
   animation: blink 1s steps(2, start) infinite;
 }
 
+.pulse:focus{ 
+  animation: none;
+}
+
 @keyframes blink {
-  to { visibility: hidden;}
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
   
 
