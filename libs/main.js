@@ -39,3 +39,39 @@ function keydownAction(e) {
         $("#timeClock").text(currentTime);
     }
 }
+
+// var saveBtn = document.querySelectorAll(saveBtn);
+
+// function addListeners() {
+//     saveBtn.addEventListener('click', saveInfo);
+// }
+
+// document.onload = addListeners();
+
+// function saveInfo(e) {
+//     console.log("Hello");
+// }
+
+var saveBtn = $('.saveBtn');
+
+// saveBtn.on('click', function () {        //Me learning jQuery DOM traversal
+//     console.log('This object:');
+//     console.log(this);
+//     console.log('The parent ');
+//     console.log($(this).parent()); //gotta wrap in a $() to use .parent()
+//     console.log('The siblings ');
+//     console.log($(this).siblings());
+//     console.log('The middle column ');
+//     console.log($(this).siblings('.col-8'));
+//     console.log('The textarea ');
+//     console.log($(this).siblings('.col-8').children());
+//     console.log('textarea value ');
+//     console.log($(this).siblings('.col-8').children().val()); //Got it :)
+
+//     console.log($(this).siblings('.col-2').text()); //And this gets the time
+//   });
+
+saveBtn.on('click', function () {
+    console.log($(this).siblings('.col-8').children().val());
+    console.log($(this).siblings('.col-2').text());
+});
