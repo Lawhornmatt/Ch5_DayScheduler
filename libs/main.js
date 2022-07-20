@@ -72,6 +72,7 @@ var saveBtn = $('.saveBtn');
 //   });
 
 saveBtn.on('click', function () {
-    console.log($(this).siblings('.col-8').children().val());
     console.log($(this).siblings('.col-2').text());
+    console.log($(this).siblings('.col-8').children().val());
+    localStorage.setItem(($(this).siblings('.col-2').text()), ($(this).siblings('.col-8').children().val()));
 });
