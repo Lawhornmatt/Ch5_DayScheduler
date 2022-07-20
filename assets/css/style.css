@@ -25,10 +25,9 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family:'Courier New', Courier, monospace;
   /* background-color: var(--CRT-screen); */
 }
 
@@ -48,6 +47,7 @@ textarea {
   height: 85%;
   outline: none;
   resize: none;
+  text-transform: uppercase;
 }
 
 textarea::placeholder {
@@ -84,7 +84,9 @@ header.jumbotron > * {
 
 .jumbotron p {
   font-weight: bold;
+  font-family: 'IBM Plex Mono', monospace;
 }
+
 
 
 .description{
@@ -120,14 +122,6 @@ header.jumbotron > * {
 
 .future {
   background-color: #77dd77;
-  color: white;
-}
-
-.saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06AED5;
   color: white;
 }
 
