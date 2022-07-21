@@ -154,10 +154,6 @@ header.jumbotron > * {
   background: var(--pastOrange);
 }
 
-.modernRow {
-  /* animation: flash 1s steps(2, start) infinite; */
-}
-
 .container-fluid {
   border: var(--rustyRidge);
 }
