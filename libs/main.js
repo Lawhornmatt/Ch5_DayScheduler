@@ -1,13 +1,14 @@
 //Initiallizing currentTime AND defining it with moment.js THEN immediately changing the inner Text of timeClock prevents that initial lag when using setInterval. Without the following two lines, the current time field starts out blank for one second.
-var currentTime = moment().format('HH:mm:ss')
+var currentTime = new moment().format('HH:mm:ss')
 $("#timeClock").text(currentTime);
 
 //Updates the clock every second
 var timetoAdd;
 timetoAdd = setInterval(function () {
-    currentTime = moment().format('HH:mm:ss');
+    currentTime = new moment().format('HH:mm:ss');
     $("#timeClock").text(currentTime);
 }, 1000);
+
 
 //Set the date
 var currentDate = moment().format('ddd MM, YYYY')
@@ -52,7 +53,7 @@ function keydownAction(e) {
 //     console.log("Hello");
 // }
 
-var saveBtn = $('.saveBtn');
+var saveBtn;
 
 // saveBtn.on('click', function () {        //Me learning jQuery DOM traversal
 //     console.log('This object:');
@@ -71,12 +72,19 @@ var saveBtn = $('.saveBtn');
 //     console.log($(this).siblings('.col-2').text()); //And this gets the time
 //   });
 
-saveBtn.on('click', function () {
-    console.log('Local Storage (Key then Pair):')
-    console.log($(this).siblings('.col-2').text());
-    console.log($(this).siblings('.col-8').children().val());
-    localStorage.setItem(($(this).siblings('.col-2').text()), ($(this).siblings('.col-8').children().val()));
-});
+function updateBtns() {
+
+    saveBtn = $('.saveBtn');
+
+    saveBtn.on('click', function () {
+        console.log('Local Storage (Key then Pair):')
+        // console.log($(this).siblings('.col-2').text());
+        console.log($(this).parent().attr('id'));
+        console.log($(this).siblings('.col-8').children().val());
+        localStorage.setItem(($(this).parent().attr('id')), ($(this).siblings('.col-8').children().val()));
+    });
+}
+
 
 function persistancePls() {
     
@@ -117,25 +125,41 @@ function persistancePls() {
     }
 }
 
-const fakeHours = 14;
+// use moment().set({"hour": 11, "minute": 59}).format('HH:mm') or whatever for setting the time for debugging
 
 function rowResponse() {
     // console.log((moment().hours()))
-    var numMakeOld = (fakeHours - 9); //2
+    var numMakeOld = (moment().format('HH') - 09);
     // console.log($('.container-fluid').children());
     for (let i = 0; i < numMakeOld; i++) {
         var rowToChange = $('.container-fluid').children().eq(i);
         rowToChange.addClass('rowinthePast');
             var colToChangeLeft = rowToChange.children().eq(0);
+            colToChangeLeft.removeClass('colModern');
             colToChangeLeft.addClass('colinthePast');
             var colToChangeRight = rowToChange.children().eq(2);
             colToChangeRight.addClass('colinthePast');
+            colToChangeRight.removeClass('saveBtn');
             colToChangeRight.children().removeClass('pulse');
             var colToChangeMid = rowToChange.children().eq(1);
             colToChangeMid.addClass('col8inthePast');
             colToChangeMid.children().removeClass('pulse');
             colToChangeMid.children('textarea').attr('readonly', 'true');
+            colToChangeMid.children('textarea').attr('placeholder','');
     }
+    var currentHourRow = $('.container-fluid').children().eq(numMakeOld);
+    currentHourRow.addClass('modernRow');
+        var colToChangeLeft = currentHourRow.children().eq(0);
+        colToChangeLeft.html("<span class=\"material-symbols-outlined\">warning</span>");
+        colToChangeLeft.addClass('colFlash');
+
+        var colToChangeRight = currentHourRow.children().eq(2);
+        colToChangeRight.addClass('colModern');
+
+        var colToChangeMid = currentHourRow.children().eq(1);
+        colToChangeMid.addClass('colModern');
+
+    updateBtns()
 };
 
 function startUp() {

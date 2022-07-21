@@ -3,6 +3,7 @@
 
 :root {
   --visibleBlue: rgb(14, 26, 59);
+  --pastOrange: rgb(194, 92, 25);
   --rustyRidge: .25rem ridge rgb(75, 48, 40);
   /* --chromeRidge: .25rem ridge rgb(129, 107, 95); */
   --chromeRidge: .1rem dashed greenyellow;
@@ -27,12 +28,6 @@
       rgba(136, 51, 30, 0.082) 50px, 
       transparent 60px
       );
-      
-      /* conic-gradient(
-      from 45deg at 90% 10%, 
-      rgba(147, 226, 151, 0.3), 
-      transparent, 
-      rgb(128, 100, 194)); */
 }
 
 body {
@@ -136,9 +131,8 @@ header.jumbotron > * {
   color: white;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all .3s ease-in-out;
+.saveBtn:hover {
+  cursor: pointer;
 }
 
 /* I think Bootstrap gives all rows a thin white border automatically. This overrides it.  */
@@ -157,7 +151,11 @@ header.jumbotron > * {
   border-top: 0 !important;
   border-bottom: var(--tarnishedRidge);
   color: rgb(14, 26, 59);
-  background: rgb(194, 92, 25);
+  background: var(--pastOrange);
+}
+
+.modernRow {
+  /* animation: flash 1s steps(2, start) infinite; */
 }
 
 .container-fluid {
@@ -198,12 +196,33 @@ header.jumbotron > * {
 .col8inthePast > textarea {
   color: var(--visibleBlue);
   font-weight: bold;
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
 }
 
 .col8inthePast > textarea::placeholder {
   color: var(--visibleBlue);
   font-weight: bold;
+}
+
+/* https://stackoverflow.com/questions/37542789/css3-animate-color-by-steps */
+/* Suprisingly hard to make things flash and not be gradual */
+/* Must use steps(1, end) and give 3 @keyframe states: the beginning and end states are your "normal" states while the middle state is your true "changed" state */
+.colFlash {
+  animation: flash 1s steps(1, end) infinite; 
+}
+
+.colModern {
+  background: greenyellow;
+  color: black;
+}
+
+.colModern > textarea {
+  background: greenyellow;
+  color: black;
+}
+
+.colModern > textarea::placeholder {
+  color: black;
 }
 
 /* .material-icons.md-48 { font-size: 654px; } */
@@ -228,6 +247,21 @@ header.jumbotron > * {
 @keyframes blink {
   from { opacity: 1; }
   to { opacity: 0; }
+}
+
+@keyframes flash {
+  0% {
+    background: black;
+    color: greenyellow;
+  }
+  50% { 
+    background: greenyellow;
+    color: black;
+}
+100% {
+  background: black;
+  color: greenyellow;
+}
 }
 
 
