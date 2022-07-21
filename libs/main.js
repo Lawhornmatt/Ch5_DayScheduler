@@ -6,8 +6,14 @@ $("#timeClock").text(currentTime);
 var timetoAdd;
 timetoAdd = setInterval(function () {
     currentTime = new moment().format('HH:mm:ss');
+    var currentMinutes = new moment().format('mm:ss');
+    if (currentMinutes == '00:00') {
+        rowResponse();
+    };
     $("#timeClock").text(currentTime);
 }, 1000);
+
+
 
 
 //Set the date
@@ -134,13 +140,20 @@ function rowResponse() {
     for (let i = 0; i < numMakeOld; i++) {
         var rowToChange = $('.container-fluid').children().eq(i);
         rowToChange.addClass('rowinthePast');
+
             var colToChangeLeft = rowToChange.children().eq(0);
+            if (colToChangeLeft.children('span')) {
+            var parentID = rowToChange.attr('id');
+            colToChangeLeft.html(parentID);
             colToChangeLeft.removeClass('colModern');
+            };
             colToChangeLeft.addClass('colinthePast');
+
             var colToChangeRight = rowToChange.children().eq(2);
             colToChangeRight.addClass('colinthePast');
             colToChangeRight.removeClass('saveBtn');
             colToChangeRight.children().removeClass('pulse');
+            
             var colToChangeMid = rowToChange.children().eq(1);
             colToChangeMid.addClass('col8inthePast');
             colToChangeMid.children().removeClass('pulse');
