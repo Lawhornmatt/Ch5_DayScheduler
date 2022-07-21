@@ -2,9 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
 :root {
+  --visibleBlue: rgb(14, 26, 59);
   --rustyRidge: .25rem ridge rgb(75, 48, 40);
   /* --chromeRidge: .25rem ridge rgb(129, 107, 95); */
   --chromeRidge: .1rem dashed greenyellow;
+  --tarnishedRidge: .1rem dashed rgb(14, 26, 59);
   --CRT-screen: repeating-linear-gradient(
     0deg, 
     rgb(5, 5, 8),
@@ -16,6 +18,15 @@
       transparent 0%,
       rgba(164, 230, 167, 0.02) 50%, 
       transparent 100%);
+
+    --screen-tarnish: repeating-linear-gradient(
+      45deg, 
+      transparent 0%,
+      rgba(136, 51, 30, 0.082) 40px, 
+      transparent 70px,
+      rgba(136, 51, 30, 0.082) 50px, 
+      transparent 60px
+      );
       
       /* conic-gradient(
       from 45deg at 90% 10%, 
@@ -142,6 +153,13 @@ header.jumbotron > * {
   border-bottom: none;
 }
 
+.rowinthePast {
+  border-top: 0 !important;
+  border-bottom: var(--tarnishedRidge);
+  color: rgb(14, 26, 59);
+  background: rgb(194, 92, 25);
+}
+
 .container-fluid {
   border: var(--rustyRidge);
 }
@@ -164,6 +182,28 @@ header.jumbotron > * {
   border-left: var(--chromeRidge);
   border-right: var(--chromeRidge);
   padding: .125rem;
+}
+
+.col8inthePast {
+  border-left: var(--tarnishedRidge);
+  border-right: var(--tarnishedRidge);
+}
+
+.colinthePast {
+  background: var(--screen-tarnish);
+  font-weight: 900;
+  text-decoration: line-through;
+}
+
+.col8inthePast > textarea {
+  color: var(--visibleBlue);
+  font-weight: bold;
+  text-decoration: line-through;
+}
+
+.col8inthePast > textarea::placeholder {
+  color: var(--visibleBlue);
+  font-weight: bold;
 }
 
 /* .material-icons.md-48 { font-size: 654px; } */
@@ -189,5 +229,7 @@ header.jumbotron > * {
   from { opacity: 1; }
   to { opacity: 0; }
 }
+
+
   
 
