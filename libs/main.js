@@ -75,8 +75,8 @@ function persistancePls() {
 
 function rowResponse() {
 
-    var numMakeOld = (moment().format('HH') - 09);
-    
+    var numMakeOld = (moment().format('HH') - 9);
+
     for (let i = 0; i < numMakeOld; i++) {
         var rowToChange = $('.container-fluid').children().eq(i);
         rowToChange.addClass('rowinthePast');
