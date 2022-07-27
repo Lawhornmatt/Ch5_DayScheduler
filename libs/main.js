@@ -15,7 +15,7 @@ timetoAdd = setInterval(function () {
 
 
 //Set the date
-var currentDate = moment().format('ddd MM, YYYY')
+var currentDate = moment().format('DD, MM, YYYY')
 $("#currentDay").text(currentDate);
 
 var saveBtn;
