@@ -65,7 +65,7 @@ textarea::placeholder {
 }
 
 header.jumbotron > * {
-  background-image: url('/assets/images/GS_A.jpg');
+  background-image: url('../images/GS_A.jpg');
   border: var(--rustyRidge);
   padding: .5rem;
 }
@@ -78,7 +78,7 @@ header.jumbotron > * {
 .jumbotron {
   text-align: center;
   background-color: silver;
-  background-image: url('/assets/images/CS_C_A.jpg');
+  background-image: url('../images/CS_C_A.jpg');
   color: black;
   margin: 0;
 
