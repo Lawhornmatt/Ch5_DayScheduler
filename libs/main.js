@@ -1,11 +1,11 @@
 //Initiallizing currentTime AND defining it with moment.js THEN immediately changing the inner Text of timeClock prevents that initial lag when using setInterval. Without the following two lines, the current time field starts out blank for one second.
-var currentTime = new moment().subtract(12, 'hours').format('HH:mm:ss')
+var currentTime = new moment().format('HH:mm:ss')
 $("#timeClock").text(currentTime);
 
 //Updates the clock every second
 var timetoAdd;
 timetoAdd = setInterval(function () {
-    currentTime = new moment().subtract(12, 'hours').format('HH:mm:ss');
+    currentTime = new moment().format('HH:mm:ss');
     var currentMinutes = new moment().format('mm:ss');
     if (currentMinutes == '00:00') {
         rowResponse();
@@ -135,7 +135,7 @@ function persistancePls() {
 
 function rowResponse() {
     // console.log((moment().hours()))
-    var numMakeOld = (moment().subtract(12, 'hours').format('HH') - 09);
+    var numMakeOld = (moment().format('HH') - 09);
     // console.log($('.container-fluid').children());
     for (let i = 0; i < numMakeOld; i++) {
         var rowToChange = $('.container-fluid').children().eq(i);
