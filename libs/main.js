@@ -77,8 +77,9 @@ function rowResponse() {
 
     var numMakeOld = Math.trunc((moment().format('HH') - 9));
 
-    console.log(numMakeOld);
-
+    if (moment().format('HH') < 08) {
+        return;
+    } else {
     for (let i = 0; i < numMakeOld; i++) {
         var rowToChange = $('.container-fluid').children().eq(i);
         rowToChange.addClass('rowinthePast');
@@ -115,6 +116,7 @@ function rowResponse() {
         colToChangeMid.addClass('colModern');
 
     updateBtns()
+    }
 };
 
 function startUp() {
