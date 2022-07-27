@@ -77,6 +77,8 @@ function rowResponse() {
 
     var numMakeOld = Math.trunc((moment().format('HH') - 9));
 
+    console.log(numMakeOld);
+
     for (let i = 0; i < numMakeOld; i++) {
         var rowToChange = $('.container-fluid').children().eq(i);
         rowToChange.addClass('rowinthePast');

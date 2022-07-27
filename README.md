@@ -5,7 +5,9 @@ I started with the provided souce code, which was only HTML and CSS, and went fr
 
 ## BUGS:
 
-Currently, the webpage works only when hosted locally, like when using the VS Code 'LiveServer' extension. Just opening the index.html file in your browser does not work; it is unable to access images nor the javascript file 'main.js'. The CSS file *is* accessible. I am still trying to pinpoint why. 
+~~Currently, the webpage works only when hosted locally, like when using the VS Code 'LiveServer' extension. Just opening the index.html file in your browser does not work; it is unable to access images nor the javascript file 'main.js'. The CSS file *is* accessible. I am still trying to pinpoint why.~~
+
+Looks like I was able to fix the issues but GitHub pages was taking a long time to update. Should be working now!
 
 ## CRITERIA: 
 
