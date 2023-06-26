@@ -47,7 +47,7 @@ Record whatever events you have at that event hour and hit that save floppy in t
 <img src="./assets/images/SchedutronScreenshot.png" alt="Screenshot of around 11am" />
 
 ## VISIT:
-Click here to use <a href="https://lawhornmatt.github.io/Ch5_DayScheduler/" target="_blank">SCHEDUTRON-3000</a>
+[Click here](https://lawhornmatt.github.io/DayScheduler/) to use SCHEDUTRON-3000
 
 ## CREDIT:
 Matthew Lawhorn, July 2022
